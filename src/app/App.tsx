@@ -1,0 +1,16 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { FC } from 'react';
+
+export const queryClient = new QueryClient({ defaultOptions: { queries: { refetchOnWindowFocus: false } } });
+
+const App: FC = () => (
+    <QueryClientProvider client={queryClient}>
+        <div className="m-8">
+            Hello worlds
+        </div>
+        <ReactQueryDevtools />
+    </QueryClientProvider>
+);
+
+export default App;
